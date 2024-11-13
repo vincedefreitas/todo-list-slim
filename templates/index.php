@@ -17,10 +17,11 @@
 </div>
 <div class="w-1/2 border mx-auto p-4">
     <ul>
-        <li class="py-1">Test</li>
-        <li class="py-1">Test 2</li>
-        <li class="py-1">Test 3</li>
-        <li class="py-1">Test</li>
+        <?php
+        foreach ($tasks as $task) {
+            echo "<ul class='py-2'>{$task['description']}</ul>";
+        }
+        ?>
     </ul>
 </div>
 
