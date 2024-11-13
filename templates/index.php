@@ -4,30 +4,25 @@
     <meta charset="utf-8"/>
     <title>Slim 4</title>
     <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
-    <style>
-        body {
-            margin: 50px 0 0 0;
-            padding: 0;
-            width: 100%;
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            text-align: center;
-            color: #aaa;
-            font-size: 18px;
-        }
-
-        h1 {
-            color: #719e40;
-            letter-spacing: -3px;
-            font-family: 'Lato', sans-serif;
-            font-size: 100px;
-            font-weight: 200;
-            margin-bottom: 0;
-        }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-<h1>Slim</h1>
-<div>a microframework for PHP</div>
-    <p>Try <a href="http://www.slimframework.com">SlimFramework</a></p>
+<div class="text-center mb-2">
+    <h1 class="text-4xl mx-auto my-2">To Do List</h1>
+    <form action="index.php" method="post">
+        <label for="task">Task:</label>
+        <input class="w-96 border rounded-md py-1 px-2" type="text" id="task" name="task" placeholder="What do you need to do today?">
+        <input class="bg-emerald-300 py-1 px-2 rounded-md" type="submit" value="Add Task">
+    </form>
+</div>
+<div class="w-1/2 border mx-auto p-4">
+    <ul>
+        <li class="py-1">Test</li>
+        <li class="py-1">Test 2</li>
+        <li class="py-1">Test 3</li>
+        <li class="py-1">Test</li>
+    </ul>
+</div>
+
 </body>
 </html>
