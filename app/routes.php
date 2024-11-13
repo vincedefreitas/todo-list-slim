@@ -19,22 +19,4 @@ return function (App $app) {
         return $renderer->render($response, "index.php", $args);
     });
 
-    $app->get('/sonic[/{id}]', function ($request, $response, $args) use ($container) {
-        $queryParams = $request->getQueryParams();
-        $parameters = [
-            'id' => $args['id'],
-            'catchphrase' => $queryParams['catchphrase']
-        ];
-        $renderer = $container->get(PhpRenderer::class);
-        return $renderer->render($response, "sonic.php", $parameters);
-    });
-
-    $app->get('/robotstores', RobotStoresController::class);
-
-    $app->get('/robotstores/product/{id}', ProductController::class);
-
-    $app->get('/courses', CoursesAPIController::class);
-
-    $app->get('/robotstores/api/product/{id}',ProductApiController::class);
-
 };
