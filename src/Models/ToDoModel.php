@@ -13,20 +13,27 @@ class ToDoModel
         $this->db = $db;
     }
 
-    public function getTasks()
+    public function getTasks(): array
     {
         $query = $this->db->prepare('SELECT `id`, `description`, `completed` FROM `tasks`;');
         $query->execute();
         return $query->fetchALl();
     }
 
-    public function addTask($data): void {
-        $query = $this->db->prepare('INSERT INTO `tasks` (`description`, `completed`) VALUES (:description, :completed);'
-        );
+    public function addTask(array $data): void {
+        $query = $this->db->prepare('INSERT INTO `tasks` (`description`, `completed`) VALUES (:description, :completed);');
 
         $query->execute([
             'description' => $data['description'],
             'completed' => 0
+        ]);
+    }
+
+    public function updatedCompleted($data): void {
+        $query = $this->db->prepare('UPDATE `issues` SET `completed` = 1 WHERE `id` = :id;');
+
+        $query->execute([
+            'id' => $data['id']
         ]);
     }
 
