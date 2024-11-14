@@ -20,4 +20,14 @@ class ToDoModel
         return $query->fetchALl();
     }
 
+    public function addTask($data): void {
+        $query = $this->db->prepare('INSERT INTO `tasks` (`description`, `completed`) VALUES (:description, :completed);'
+        );
+
+        $query->execute([
+            'description' => $data['description'],
+            'completed' => 0
+        ]);
+    }
+
 }
