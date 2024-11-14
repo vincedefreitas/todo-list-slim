@@ -30,11 +30,9 @@ class ToDoModel
     }
 
     public function updatedCompleted($data): void {
-        $query = $this->db->prepare('UPDATE `issues` SET `completed` = 1 WHERE `id` = :id;');
-
+        $query = $this->db->prepare('UPDATE `tasks` SET `completed` = 1 WHERE `id` = :id;');
         $query->execute([
             'id' => $data['id']
         ]);
     }
-
 }

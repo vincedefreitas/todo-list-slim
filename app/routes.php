@@ -20,8 +20,8 @@ return function (App $app) {
 
     $app->post('/', AddTaskController::class);
 
-    $app->put('/', UpdateTaskController::class);
-
     $app->get('/completed', CompletedController::class);
+
+    $app->post('/completed/{id}', UpdateTaskController::class);
 
 };

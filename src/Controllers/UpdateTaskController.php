@@ -3,9 +3,8 @@
 namespace App\Controllers;
 
 use App\Models\ToDoModel;
-use Slim\Views\PhpRenderer;
 
-class AddTaskController
+class UpdateTaskController
 {
     private $model;
 
@@ -16,8 +15,8 @@ class AddTaskController
 
     public function __invoke($request, $response, $args)
     {
-        $data = $request->getParsedBody();
-        $this->model->addTask($data);
+        $this->model->updatedCompleted($args);
         return $response->withHeader('Location', '/')->withStatus(301);
     }
+
 }
