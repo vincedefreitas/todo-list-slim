@@ -4,6 +4,7 @@ declare(strict_types=1);
 use App\Controllers\AddTaskController;
 use App\Controllers\CompletedController;
 use App\Controllers\CoursesAPIController;
+use App\Controllers\DeleteTaskController;
 use App\Controllers\ProductApiController;
 use App\Controllers\ProductController;
 use App\Controllers\RobotStoresController;
@@ -23,5 +24,7 @@ return function (App $app) {
     $app->get('/completed', CompletedController::class);
 
     $app->post('/completed/{id}', UpdateTaskController::class);
+
+    $app->post('/delete/{id}', DeleteTaskController::class);
 
 };

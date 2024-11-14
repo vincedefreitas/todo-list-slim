@@ -35,4 +35,11 @@ class ToDoModel
             'id' => $data['id']
         ]);
     }
+
+    public function deleteTask($data): void {
+        $query = $this->db->prepare('DELETE FROM `tasks` WHERE `id` = :id;');
+        $query->execute([
+            'id' => $data['id']
+        ]);
+    }
 }

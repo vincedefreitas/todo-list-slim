@@ -16,7 +16,12 @@
         <?php
         foreach ($tasks as $task) {
             if ($task['completed']) {
-                echo "<ul class='py-2'>{$task['description']}</ul>";
+                echo "<div class='flex gap-2 items-center'>";
+                echo "<li class='py-2'>{$task['description']}</li>";
+                echo "<form action='/delete/{$task['id']}' method='POST'>";
+                echo "<input class='bg-emerald-300 py-1 px-2 rounded-md' type='submit' value='Delete'>";
+                echo "</form>";
+                echo "</div>";
             }
         }
         ?>
