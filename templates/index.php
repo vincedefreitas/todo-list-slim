@@ -14,6 +14,7 @@
         <label for="task">Task:</label>
         <input class="w-96 border rounded-md py-1 px-2" type="text" id="task" name="description" placeholder="What do you need to do today?">
         <input class="bg-emerald-300 py-1 px-2 rounded-md" type="submit" value="Add Task">
+        <a href="/completed" class="bg-orange-400 py-2 px-2 rounded-md">See Completed Tasks</a>
     </form>
 </div>
 <div class="w-1/2 border mx-auto p-4">
